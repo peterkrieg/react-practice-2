@@ -21,7 +21,7 @@ class PeopleTable extends Component {
   }
   renderPeople() {
     console.log(this.state);
-    return this.state.people.map(person => <li>{person.name}</li>);
+    return this.state.people.map((person, index) => <Person key={index} person={person}/>);
   }
   render() {
     console.log('render');
