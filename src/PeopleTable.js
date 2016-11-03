@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import Person from './Person';
 
 class PeopleTable extends Component {
+  componentDidMount() {
+    console.log('component did mount');
+  }
   renderPeople() {
     return (
       <div>
@@ -12,6 +15,7 @@ class PeopleTable extends Component {
     );
   }
   render() {
+    console.log('render');
     return (
       <div>
         { this.renderPeople() }
