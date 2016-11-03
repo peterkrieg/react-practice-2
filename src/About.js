@@ -5,6 +5,7 @@ class About extends Component {
 		return(
 			<div>
 				<p>This is the about page!!</p>
+				{this.props.children}
 			</div>
 		);
 	}
