@@ -1,10 +1,14 @@
 import React, { Component } from 'react';
-// import './App.css';
+import Person from './Person';
 
 class PeopleTable extends Component {
   render() {
     return (
-      <div>hello world</div>
+      <div>
+        <Person name='luke' />
+        <Person name={'leia'} />
+        <Person name={'han'} />
+      </div>
     );
   }
 }
