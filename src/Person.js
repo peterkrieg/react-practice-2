@@ -10,12 +10,20 @@ const list = {
 }
 
 export default class Person extends Component {
+	handleClick() {
+		this.props.onButtonClick();
+	}
 	render() {
 		const { name, height, gender, eye_color } = this.props.person;
 		return (
 			<li style={list}>
 				<h4>{name}</h4>
 				<p>height: {height}</p>
+				<input 
+					type="button" 
+					className="button" 
+					onClick={this.handleClick.bind(this)} 
+				/>Button
 			</li>
 		);
 	}

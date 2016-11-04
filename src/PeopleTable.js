@@ -7,6 +7,7 @@ class PeopleTable extends Component {
 
     this.state = {
       people: [],
+      counter: 0,
     }
   }
   componentDidMount() {
@@ -19,15 +20,29 @@ class PeopleTable extends Component {
       this.setState({ people });
     });
   }
+  handleCounter() {
+    this.setState({ counter: ++this.state.counter }, () => {
+      console.log(this.state.counter);
+    })
+  }
   renderPeople() {
     console.log(this.state);
-    return this.state.people.map((person, index) => <Person key={index} person={person}/>);
+    const { people } = this.state;
+
+    return people.filter(person => person.height > 50)
+    .map((person, index) => {
+      return <Person 
+        onButtonClick={this.handleCounter.bind(this)} 
+        key={index} 
+        person={person}/>
+    });
   }
   render() {
     console.log('render');
     return (
       <ul>
         {this.renderPeople()}
+        <p>Counter: {this.state.counter}</p>
       </ul>
     );
   }
